@@ -4,8 +4,8 @@ import EventList from "./EventList";
 function Sidebar() {
     return (
         <div className="sidebar">
-            <button className="add-event-btn">+ Add Event</button>
             <SearchBar />
+            <button className="add-event-btn">+ Add Event</button>
             <EventList />
         </div>
     );
