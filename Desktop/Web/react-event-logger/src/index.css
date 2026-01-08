@@ -93,3 +93,14 @@
     display: flex;
     justify-content: space-between;
 }
+
+.delete-btn {
+    margin-top: 16px;
+    background: #ff4d4d;
+    color: white;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+

@@ -1,4 +1,4 @@
-function EventDetails({ selectedEvent }) {
+function EventDetails({selectedEvent, onDeleteEvent}) {
     if (!selectedEvent) {
         return (
             <div className="event-details">
@@ -15,6 +15,11 @@ function EventDetails({ selectedEvent }) {
             <p><strong>Date & Time:</strong> {selectedEvent.dateTime}</p>
             <p>{selectedEvent.description}</p>
             <p>{selectedEvent.details}</p>
+
+            <button className="delete-btn"
+                    onClick={() => onDeleteEvent(selectedEvent.id)}>Delete
+            </button>
+
         </div>
     );
 

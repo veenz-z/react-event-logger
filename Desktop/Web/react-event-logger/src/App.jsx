@@ -15,9 +15,15 @@ function App() {
     const [events, setEventsState] = useState(initialEvents);
     const [selectedEvent, setSelectedEvent] = useState(null);
 
-    const _setEvents = (newEvents) => {
+    const setEvents = (newEvents) => {
         setEventsState(newEvents);
         localStorage.setItem("events", JSON.stringify(newEvents));
+    };
+
+    const handleDeleteEvent = (eventId) => {
+        const updatedEvents = events.filter((e) => e.id !== eventId);
+        setEvents(updatedEvents);
+        setSelectedEvent(null);
     };
 
 
@@ -27,9 +33,12 @@ function App() {
                 events={events}
                 selectedEvent={selectedEvent}
                 onSelectEvent={setSelectedEvent}
-                onAddEvent={(newEvent) => _setEvents([...events, newEvent])}
+                onAddEvent={(newEvent) => setEvents([...events, newEvent])}
             />
-            <EventDetails selectedEvent={selectedEvent} />
+            <EventDetails
+                selectedEvent={selectedEvent}
+                onDeleteEvent={handleDeleteEvent}
+            />
         </div>
     );
 }
