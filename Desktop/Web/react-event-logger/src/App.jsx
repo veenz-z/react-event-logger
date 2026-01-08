@@ -27,6 +27,7 @@ function App() {
                 events={events}
                 selectedEvent={selectedEvent}
                 onSelectEvent={setSelectedEvent}
+                onAddEvent={(newEvent) => _setEvents([...events, newEvent])}
             />
             <EventDetails selectedEvent={selectedEvent} />
         </div>
