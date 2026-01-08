@@ -19,3 +19,29 @@
     width: 70%;
     padding: 16px;
 }
+
+.search-bar {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+}
+
+.event-list {
+    list-style: none;
+}
+
+.event-item {
+    padding: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.event-title {
+    font-weight: bold;
+}
+
+.event-date {
+    font-size: 0.85rem;
+    color: #555;
+}
