@@ -6,8 +6,19 @@ import {useState} from "react";
 
 function App() {
 
-    const [events] = useState(sampleEvents);
+
+    const initialEvents = (() => {
+        const stored = localStorage.getItem("events");
+        return stored ? JSON.parse(stored) : sampleEvents;
+    })();
+
+    const [events, setEventsState] = useState(initialEvents);
     const [selectedEvent, setSelectedEvent] = useState(null);
+
+    const _setEvents = (newEvents) => {
+        setEventsState(newEvents);
+        localStorage.setItem("events", JSON.stringify(newEvents));
+    };
 
 
     return (
@@ -17,7 +28,7 @@ function App() {
                 selectedEvent={selectedEvent}
                 onSelectEvent={setSelectedEvent}
             />
-            <EventDetails selectedEvent={selectedEvent}/>
+            <EventDetails selectedEvent={selectedEvent} />
         </div>
     );
 }
