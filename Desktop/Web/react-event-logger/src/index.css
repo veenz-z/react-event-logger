@@ -103,4 +103,18 @@
     cursor: pointer;
 }
 
+/*responsive layout using media query*/
+
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+    }
+
+    .sidebar,
+    .event-details {
+        width: 100%;
+        height: auto;
+    }
+}
+
 
