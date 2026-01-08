@@ -1,13 +1,16 @@
 import SearchBar from "./SearchBar";
 import EventList from "./EventList";
 
-function Sidebar({ sampleEvents }) {
+function Sidebar({events, selectedEvent, onSelectEvent}) {
     return (
         <div className="sidebar">
-            <SearchBar />
+            <SearchBar/>
             <button className="add-event-btn">Add Event</button>
-            <EventList events={sampleEvents} />
-        </div>
+            <EventList
+                events={events}
+                selectedEvent={selectedEvent}
+                onSelectEvent={onSelectEvent}
+            /></div>
     );
 }
 

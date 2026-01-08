@@ -37,6 +37,11 @@
     cursor: pointer;
 }
 
+.event-item.active {
+    background-color: #e6f0ff;
+    border-color: #4a7cff;
+}
+
 .event-title {
     font-weight: bold;
 }
